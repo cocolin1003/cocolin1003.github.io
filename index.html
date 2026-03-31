@@ -36,7 +36,7 @@
             border-bottom: 1px solid var(--yoru-line);
         }
         .nav-container {
-            max-width: 1300px; margin: 0 auto; padding: 1.2rem 2rem;
+            max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
         }
         nav ul { display: flex; list-style: none; gap: 2rem; }
@@ -52,63 +52,52 @@
 
         .section-divider { height: 1px; width: 40%; background: var(--yoru-line); margin: 4rem auto; }
 
+        /* 章節標題 */
         .chapter-header {
             margin-bottom: 3.5rem; border-left: 4px solid var(--yoru-accent); padding-left: 1.5rem;
         }
         .chapter-num { font-size: 0.9rem; color: var(--yoru-accent); letter-spacing: 0.3rem; }
         .chapter-title { font-size: 2.3rem; font-weight: 700; margin-top: 0.5rem; letter-spacing: 0.1rem; }
 
-        /* 絕對統一的照片大小 (220px 高度) */
+        /* 照片統一大小 (280px 高度，確保 2x2 排版時清晰) */
         .photo-container {
             margin-top: 1.5rem; border: 1px solid var(--yoru-line);
             padding: 5px; background: #fff; overflow: hidden;
         }
         .photo-container img {
-            width: 100%;
-            height: 220px; 
-            object-fit: cover;
-            filter: saturate(0.8);
-            transition: 0.5s;
-            display: block;
+            width: 100%; height: 280px; object-fit: cover;
+            filter: saturate(0.8); transition: 0.5s; display: block;
         }
         .photo-container:hover img { filter: saturate(1); transform: scale(1.05); }
-        .caption { font-size: 0.75rem; color: #999; text-align: center; margin-top: 0.8rem; font-style: italic; }
 
         /* 卡片懸浮效果 */
         .box-style {
             background: #fff; border: 1px solid var(--yoru-line);
-            padding: 2.2rem; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            padding: 2.8rem; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex; flex-direction: column; justify-content: space-between;
         }
         .box-style:hover {
-            transform: translateY(-15px);
-            border-color: var(--yoru-accent);
-            box-shadow: 0 30px 60px rgba(44, 62, 80, 0.1);
-            z-index: 10;
+            transform: translateY(-12px); border-color: var(--yoru-accent);
+            box-shadow: 0 30px 60px rgba(44, 62, 80, 0.08);
         }
 
-        section { padding: 4rem 5%; max-width: 1600px; margin: 0 auto; }
+        section { padding: 4rem 10%; max-width: 1400px; margin: 0 auto; }
 
-        /* 對稱網格排版 */
-        .grid-4 { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 1.5rem; 
-        }
-        .grid-2 { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 2.5rem; 
+        /* 重要排版：2x2 網格 (四個項目時使用) */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
         }
 
-        /* 不對稱排版樣式 */
+        /* 第二章：不對稱設計 */
         .asymmetric-layout { display: flex; gap: 5rem; position: relative; }
         .left-sticky { flex: 0.8; position: sticky; top: 120px; height: fit-content; }
         .right-content { flex: 2; }
 
         .tag {
-            font-size: 0.7rem; color: var(--yoru-sunset); border: 1px solid rgba(212, 163, 115, 0.4);
-            padding: 0.2rem 0.6rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;
+            font-size: 0.75rem; color: var(--yoru-sunset); border: 1px solid rgba(212, 163, 115, 0.4);
+            padding: 0.2rem 0.7rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;
         }
 
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
@@ -116,9 +105,8 @@
 
         footer { padding: 5rem; text-align: center; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid var(--yoru-line); }
 
-        @media (max-width: 1200px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) {
-            .grid-4, .grid-2 { grid-template-columns: 1fr; }
+        @media (max-width: 900px) {
+            .grid-2x2 { grid-template-columns: 1fr; }
             .asymmetric-layout { flex-direction: column; }
         }
     </style>
@@ -146,50 +134,50 @@
             <span>KEYBOARDIST</span>
             <span>WRITER</span>
         </div>
-        <p style="margin-top: 3.5rem; max-width: 750px; font-size: 1rem; opacity: 0.7; line-height: 2;">
-            從心理學的「鏡中自我」出發，我在理性的社會觀測與感性的文學敘事間切換視角 [1]。這是一個關於如何透過社會實踐、藝術志工與理財探索，逐步定義自我的過程。
+        <p style="margin-top: 3.5rem; max-width: 650px; font-size: 1rem; opacity: 0.7;">
+            在文字、音軌與法理之間，記錄薇閣高中的多元軌跡。這是一份關於自我定義與社會觀測的數位回憶錄。
         </p>
     </header>
 
     <main>
         <div class="section-divider fade-up"></div>
 
-        <!-- CHAPTER 01 觀測 (對稱 4 欄) -->
+        <!-- CHAPTER 01 觀測 (修正為 2x2 避免內容遮擋) -->
         <section id="observation">
             <div class="chapter-header fade-up">
                 <div class="chapter-num">CHAPTER 01</div>
                 <h2 class="chapter-title">社會與法理觀測</h2>
             </div>
-            <div class="grid-4">
+            <div class="grid-2x2">
                 <article class="box-style fade-up">
                     <div>
-                        <span class="tag">社會研究</span>
-                        <h3>師大商圈：住商衝突</h3>
-                        <p style="font-size:0.85rem;">研究龍泉商圈因人潮引發的油煙、噪音等外部成本 [2, 3]。實地記錄波浪形人行道與速限 20 標示，探討行人安全與經濟繁榮間的拉鋸 [4, 5]。</p>
+                        <span class="tag">社會實察 / 師大商圈</span>
+                        <h3>師大商圈：住商衝突與政策研究</h3>
+                        <p style="font-size:0.9rem;">研究龍泉里因人潮引發的油煙、噪音等外部成本 [1, 2]。實地記錄波浪形人行道、減速丘與速限 20 標示等行人友善設施 [3, 4]。反思政府「記點制」標準不明確引發的爭議，探討商業利益與居住安寧間的平衡 [5, 6]。</p>
                     </div>
                     <div class="photo-container"><img src="images/shida.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
-                        <span class="tag">歷史保存</span>
-                        <h3>四四南村：時代鄉愁</h3>
-                        <p style="font-size:0.85rem;">考察台北首座眷村歷史 [6]。分析 A-D 館如何從兵工廠舊址活化為現代藝文空間 [6]。對應余光中《鄉愁》詩句，體會「一灣淺淺的海峽」的時代重量 [6]。</p>
+                        <span class="tag">歷史保存 / 四四南村</span>
+                        <h3>四四南村：眷村地景與時代鄉愁</h3>
+                        <p style="font-size:0.85rem;">參訪台北首座眷村，探究 1948 年青島四十四兵工廠員生遷台歷史 [7]。分析 A-D 館如何從兵工廠舊址活化為現代藝文空間 [7]。對應余光中《鄉愁》詩句，體會「一灣淺淺的海峽」承載的家國情感 [7]。</p>
                     </div>
                     <div class="photo-container"><img src="images/44south.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
-                        <span class="tag">法治思辨</span>
-                        <h3>司法參訪：法袍正義</h3>
-                        <p style="font-size:0.85rem;">參訪司法院體驗藍（法官）、紫紅（檢察官）、白（律師）法袍 [7]。觀察興亞式建築的菊花浮雕與玻璃自然採光設計 [7]。針對死刑一致決門檻提出反思 [8]。</p>
+                        <span class="tag">法治教育 / 機關參訪</span>
+                        <h3>司法院參訪：法袍下的公平正義</h3>
+                        <p style="font-size:0.9rem;">體驗法官（藍色）、檢察官（紫紅色）、律師（白色）之法袍權責 [8]。在憲法法庭觀察處理總統彈劾案件的莊嚴環境 [8]。觀察興亞式建築中的菊花圖案與玻璃自然採光設計 [8]。針對精神障礙判決與死刑釋憲「一致決」門檻進行法律思辨 [9, 10]。</p>
                     </div>
                     <div class="photo-container"><img src="images/court.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
-                        <span class="tag">策略理財</span>
-                        <h3>CMoney：3.3% 獲利</h3>
-                        <p style="font-size:0.85rem;">在 500 萬資產規模下操作朋億*(6613)、漢翔、衛司特等股 [9-11]。運用 KD 與 MACD 指標判斷進出場，實踐「5D 反詐」口訣 [6, 12]。</p>
+                        <span class="tag">金融理財 / 競技實錄</span>
+                        <h3>3.3% 獲利：理財競技場的心態磨練</h3>
+                        <p style="font-size:0.9rem;">在 CMoney 操作朋億*(6613)、漢翔與衛司特，最終獲利 3.3% 名列第 15 [11, 12]。運用 KD 與 MACD 指標判斷出場 [12, 13]。同時實踐「5D 反詐行動」：不點未知連結、不聽投資明牌等口訣，學習區分投資真實價值與投機題材之差異 [7, 12]。</p>
                     </div>
                     <div class="photo-container"><img src="images/stock.jpg"></div>
                 </article>
@@ -198,7 +186,7 @@
 
         <div class="section-divider fade-up"></div>
 
-        <!-- CHAPTER 02 敘事 (不對稱) -->
+        <!-- CHAPTER 02 敘事 (維持 3 個項目同一排的不對稱流動感) -->
         <section id="narrative">
             <div class="asymmetric-layout">
                 <div class="left-sticky fade-up">
@@ -206,23 +194,24 @@
                         <div class="chapter-num">CHAPTER 02</div>
                         <h2 class="chapter-title">敘事與媒體批判</h2>
                     </div>
-                    <p style="font-size: 0.95rem; opacity: 0.6; padding-left: 1.5rem;">文字拆解自我的鏡像 [1]，並批判 AI 環境下的資訊幻象 [13]。</p>
+                    <p style="font-size: 0.95rem; opacity: 0.6; padding-left: 1.5rem;">文字拆解自我的鏡像，批判 AI 時代的資訊幻象。</p>
                 </div>
                 <div class="right-content">
                     <article class="box-style fade-up" style="margin-bottom: 3rem;">
-                        <span class="tag">心理學</span>
-                        <h3>鏡中自我：拒絕成為「爛好人」</h3>
-                        <p style="font-size:1rem;">引用顧里理論反思他人評價如何形塑自我認知 [1]。我曾為迎合期待而唯唯諾諾，如今透過「學會拒絕」與「自我定義」，找回樂觀原色 [1, 8]。</p>
+                        <span class="tag">心理學 / 鏡中自我</span>
+                        <h3>自我定義：從唯唯諾諾到樂觀原色</h3>
+                        <p style="font-size:1rem;">引用顧里 (Cooley) 理論，分析他人評價如何將我形塑為不敢拒絕的「爛好人」[9]。透過與評價保持距離，我找回了童年學琴時能自我開導的樂觀本質，體認到自我不應只是社會的產物，而具備獨立定義的能力 [9]。</p>
                     </article>
                     <article class="box-style fade-up" style="margin-bottom: 3rem;">
-                        <span class="tag">獲獎小說</span>
-                        <h3>最後吔火車站 & 權謀璀璨</h3>
-                        <p style="font-size:1rem;">《最後吔火車站》以鑽石糖描寫跨越 60 年的戰爭思念 [14]。而《權謀璀璨》則構建上海歌舞廳背景，探討舞女間諜王曼麗在背叛與公義間的拉鋸 [15-17]。</p>
+                        <span class="tag">獲獎文學小說</span>
+                        <h3>《最後吔火車站》與《權謀璀璨》</h3>
+                        <p style="font-size:1rem;">在小說創作中探索歷史遺憾與道德權謀。《最後吔火車站》以鑽石糖描寫跨越 60 年的戰爭思念 [14]；《權謀璀璨》則構建上海「五七計畫」陰謀，描寫舞女間諜王曼麗在背叛與正義間的拉鋸 [15, 16]。</p>
+                        <div class="photo-container"><img src="images/novel.jpg"></div>
                     </article>
                     <article class="box-style fade-up">
-                        <span class="tag">AI 研究</span>
-                        <h3>資訊泡泡與反思核心價值</h3>
-                        <p style="font-size:1rem;">研究爭議性廣告（Shockvertising）案例與 AI 演算法產生的「資訊泡泡 (Information Bubble)」[13]。我強調人類核心價值在於保有「反思能力」[13]。</p>
+                        <span class="tag">媒體批判 / AI 研究</span>
+                        <h3>資訊泡泡與人類核心的反思力</h3>
+                        <p style="font-size:1rem;">研究爭議性廣告 (Shockvertising) 與 AI 演算法產生的「資訊泡泡 (Information Bubble)」[17, 18]。製作英語創意 YouTuber 比賽影片探討 Deepfake 假訊息。我強調人類最核心的價值在於不盲從演算法、具備思索對錯的「反思能力」[18]。</p>
                     </article>
                 </div>
             </div>
@@ -230,42 +219,42 @@
 
         <div class="section-divider fade-up"></div>
 
-        <!-- CHAPTER 03 共鳴 (對稱 2x2) -->
+        <!-- CHAPTER 03 共鳴 (維持 2x2) -->
         <section id="resonance">
             <div class="chapter-header" style="text-align:center; border-left:none; padding-left:0;">
                 <div class="chapter-num">CHAPTER 03</div>
                 <h2 class="chapter-title">校園實踐與共鳴</h2>
             </div>
-            <div class="grid-2">
+            <div class="grid-2x2">
                 <article class="box-style fade-up">
                     <div>
                         <span class="tag">音樂實踐</span>
-                        <h3>熱音社：體諒與包容的節奏</h3>
-                        <p style="font-size:0.9rem;">擔任樂團鍵盤手演出〈終究還是因為愛〉[18]。經歷過排練中的互不相讓與崩潰，最終學會以包容達成完美的團體共鳴 [18]。</p>
+                        <h3>熱音社：體諒與包容的鍵盤節奏</h3>
+                        <p style="font-size:0.9rem;">擔任樂團鍵盤手演出〈終究還是因為愛〉[19]。在團隊磨合中曾經互不相讓，但我體會到「體諒與包容」是合作的關鍵，這份共同跨越挫折的經驗成為最珍惜的共感回憶 [19]。</p>
                     </div>
                     <div class="photo-container"><img src="images/band.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
                         <span class="tag">英文話劇</span>
-                        <h3>服裝組：退讓與溝通的藝術</h3>
-                        <p style="font-size:0.9rem;">親手縫製女配角裙裝與製作旋轉燈 [19]。面對與編劇的意見分歧，我學會放下固執，以「各退一步」達成良性溝通 [19, 20]。</p>
+                        <h3>服裝組：退讓與良性溝通的實踐</h3>
+                        <p style="font-size:0.9rem;">親手縫製女配角裙裝與製作旋轉燈 [20]。面對與編劇的意見分歧，我學會放下固執，以「各退一步」達成良性溝通，體會到溝通需建立在接納對方的基礎上 [20, 21]。</p>
                     </div>
                     <div class="photo-container"><img src="images/drama.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
                         <span class="tag">志工服務</span>
-                        <h3>藝文志工：行政與佈置實踐</h3>
-                        <p style="font-size:0.9rem;">佈置祈望亭「感恩」主題，並協助整理「五項藝術比賽」作品收送件 [21]。透過這些繁瑣流程，掌握行政運作的嚴謹度 [21]。</p>
+                        <h3>藝文志工：佈置與行政勞務成長</h3>
+                        <p style="font-size:0.9rem;">佈置祈望亭「感恩」主題，並協助整理「台北市五項藝術比賽」作品收送件 [22]。透過繁瑣流程，掌握行政運作的嚴謹度，並體會師長行政工作的辛勞 [22]。</p>
                     </div>
                     <div class="photo-container"><img src="images/volunteer.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
                         <span class="tag">賽務服務</span>
-                        <h3>西塞羅盃：精準賽務節奏</h3>
-                        <p style="font-size:0.9rem;">擔任競賽組按鈴舉牌員，依規定在 2 分、1 分及 30 秒時精準給予訊號 [22]。這份任務鍛鍊了我在高壓環境下的執行力 [22]。</p>
+                        <h3>西塞羅盃：精準的賽務計時經驗</h3>
+                        <p style="font-size:0.9rem;">擔任按鈴舉牌員，精準掌控 2 分、1 分及 30 秒的賽場節奏 [23]。這項任務鍛鍊了我在高壓英文辯論賽場中穩定執行細節與解決插曲的實戰經驗 [23]。</p>
                     </div>
                     <div class="photo-container"><img src="images/cicero.jpg"></div>
                 </article>
@@ -274,38 +263,38 @@
 
         <div class="section-divider fade-up"></div>
 
-        <!-- CHAPTER 04 軌跡 (對稱 4 欄 - 補足圖片與細節) -->
+        <!-- CHAPTER 04 軌跡 (修正為 2x2 對稱) -->
         <section id="archive">
             <div class="chapter-header">
                 <div class="chapter-num">CHAPTER 04</div>
                 <h2 class="chapter-title">成長軌跡 Archive</h2>
             </div>
-            <div class="grid-4">
+            <div class="grid-2x2">
                 <article class="box-style fade-up">
                     <div>
-                        <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Language Skills</h4>
-                        <p style="font-size:0.85rem;">完成韓文自學第一階段 [23]。整理發音筆記區分鬆音、緊音與送氣音 [23]。持有多益金色證書與英檢中高級通過。</p>
+                        <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Language & History</h4>
+                        <p style="font-size:0.85rem;"><b>[韓文自學]</b> 完成線上課程第一階段 16 部分 。詳盡記錄發音筆記區分鬆音、緊音與送氣音 (ㄱ/ㄲ/ㅋ) 之差異 [24]。持有多益金色證書與英檢中高級通過。</p>
                     </div>
                     <div class="photo-container"><img src="images/korean.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
                         <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Geographic Research</h4>
-                        <p style="font-size:0.85rem;">研究天狗庵遺址、瀧乃湯裕仁親王紀念碑與「台灣池」地景 [24-26]。記錄五瀧海拔座標，展現地理實作能力 [26-28]。</p>
+                        <p style="font-size:0.85rem;"><b>[北投實察]</b> 研究天狗庵遺址、瀧乃湯裕仁親王紀念碑與「台灣池」地景特色 [25-27]。詳細記錄北投五瀧海拔座標數據，展現地理觀察與紀錄能力 [27-29]。</p>
                     </div>
                     <div class="photo-container"><img src="images/beitou.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
-                        <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Honor & Awards</h4>
-                        <p style="font-size:0.85rem;">校內文藝獎小說組佳作（兩屆）[14, 15]。英語創意 YouTuber 全校獲獎 [13, 29]。校內地景寫生優等記錄。</p>
+                        <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Academic Honors</h4>
+                        <p style="font-size:0.85rem;">● 校內文藝獎小說組 佳作（兩屆，包含《最後吔火車站》與《權謀璀璨》）。<br>● 英語創意 YouTuber 全校獲獎 [18]。<br>● 地景寫生比賽 優等記錄。</p>
                     </div>
                     <div class="photo-container"><img src="images/award.jpg"></div>
                 </article>
                 <article class="box-style fade-up">
                     <div>
                         <h4 style="color:var(--yoru-sunset); margin-bottom:1rem; border-bottom:1px solid var(--yoru-line); padding-bottom:0.5rem;">Social Critique</h4>
-                        <p style="font-size:0.85rem;">針對精神障礙判決與死刑一致決門檻提出法律辯證 [8]。研究 AI 技術對資訊傳播與反思能力的深遠影響 [13]。</p>
+                        <p style="font-size:0.85rem;">針對精神障礙判決與死刑釋憲「一致決」門檻提出法理辯證 [10]。研究 AI 資訊泡沫與爭議廣告倫理，致力於培養數位時代的反思力 [17, 18]。</p>
                     </div>
                     <div class="photo-container"><img src="images/critique.jpg"></div>
                 </article>
