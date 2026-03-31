@@ -103,14 +103,30 @@
         }
 
         /* 影像容器 */
-        .photo-container {
-            margin-top: 1.5rem; border: 1px solid var(--yoru-line); padding: 5px; background: #fff;
-        }
-        .photo-container img {
-            width: 100%; height: auto; filter: saturate(0.8); transition: 0.5s;
-        }
-        .photo-container:hover img { filter: saturate(1); }
-        .caption { font-size: 0.75rem; color: #999; text-align: center; margin-top: 0.5rem; font-style: italic; }
+        /* 統一圖片大小樣式 */
+.photo-container {
+    margin-top: 1.5rem;
+    border: 1px solid var(--yoru-line);
+    padding: 6px;
+    background: #fff;
+    width: 100%; /* 寬度隨容器調整 */
+    overflow: hidden; /* 隱藏溢出的部分 */
+}
+
+.photo-container img {
+    width: 100%;
+    height: 250px; /* 您可以根據喜好調整高度，例如 200px 或 300px */
+    object-fit: cover; /* 關鍵屬性：裁切圖片以填滿高度，同時保持比例不變形 */
+    filter: saturate(0.8);
+    transition: 0.5s;
+    display: block;
+}
+
+.photo-container:hover img {
+    filter: saturate(1);
+    transform: scale(1.05); /* 增加輕微放大效果，呼應之前的動態感 */
+}
+
 
         /* 動態淡入 */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
